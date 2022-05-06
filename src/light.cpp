@@ -46,7 +46,7 @@ double **pivot_gaus(double **mat, int size)
                 m = j;
             }
         }
-        /* s“ü‚ê‘Ö‚¦ */
+        /* è¡Œå…¥ã‚Œæ›¿ãˆ */
         if(m!=k) {
             for(j=0; j<size*2; j++) {
                 temp = mat[k][j];
@@ -54,12 +54,12 @@ double **pivot_gaus(double **mat, int size)
                 mat[m][j] = temp;
             }
         }
-        /* mat[k][k] = 1.0 ‚É‚È‚é‚æ‚¤ ks‚ğŠ„‚èZ‚·‚é */
+        /* mat[k][k] = 1.0 ã«ãªã‚‹ã‚ˆã† kè¡Œã‚’å‰²ã‚Šç®—ã™ã‚‹ */
         akk = mat[k][k];
         for(j=0; j<size*2; j++) {
             mat[k][j] /= akk;
         }
-        /* ksˆÈŠO‚Ìs‚©‚çks*ajk‚ğŒ¸Z‚µ‚ÄAk—ñ‚ğ0‚É‚·‚é */
+        /* kè¡Œä»¥å¤–ã®è¡Œã‹ã‚‰kè¡Œ*ajkã‚’æ¸›ç®—ã—ã¦ã€kåˆ—ã‚’0ã«ã™ã‚‹ */
         for(j=0; j<size; j++) {
             if(j==k) continue;
             ajk = mat[j][k];
@@ -90,6 +90,7 @@ const double mat_tmp[4][4] = {
 #define IMG_SIZE_X 160
 #define IMG_SIZE_Y 160
 
+// è¼åº¦ã®è¨ˆç®—
 double calc_bright(double a, double b, double p, double q, double ref, double x, double y, double z, double eta)
 {
     double g,h;
@@ -129,10 +130,10 @@ int main(int argc, char *argv[])
     double x, y, z, w;
     double p,q;
     int dx, dy;
-    //double alpha = M_PI/3.0;	/* ƒ¿ = 60‹*/
-    //double beta = M_PI * 75.0 / 180.0;	/* ƒÀ = 75‹*/
-    double alpha = M_PI * 120.0 / 180.0;	/* ƒ¿ = 80‹*/
-    double beta = M_PI * 30.0 / 180.0;	/* ƒÀ = 90‹*/
+    //double alpha = M_PI/3.0;	/* Î± = 60Â°*/
+    //double beta = M_PI * 75.0 / 180.0;	/* Î² = 75Â°*/
+    double alpha = M_PI * 120.0 / 180.0;	/* Î± = 80Â°*/
+    double beta = M_PI * 30.0 / 180.0;	/* Î² = 90Â°*/
     double theta;
     int r;
     int max_r;
